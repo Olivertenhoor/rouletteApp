@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Wheel</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    
+</head>
+<body>
+    <div>
+        <p id="walletBalance">Wallet Balance: 100</p>
+        <p id="betAmount">Current Bet: 0</p>
+        <p id="winAmount">Win: 0</p>
+
+    </div>
+</body>
+<body>
+    <div class="container">
+        <canvas id="rouletteCanvas" width="800" height="600"></canvas>
+        <button id="spinButton">Spin</button>
+        <button id="resetButton" onclick="resetBet()">Reset Bet</button>
+        <button id="betRedButton" onclick="placeBet('red')">Bet on Red</button>
+        <button id="betBlackButton" onclick="placeBet('black')">Bet on Black</button>
+        
+        <div id="result"></div>
+    </div>
+    <div class = "specialBets">
+       <div id="coin"></div> 
+       <div class ="rij1">
+            <button class="betButton" id="black1"  onclick="placeBet('1')"> <div class="coin-container"></div>1</button>
+            <button class="betButton" id="red4" class="coin-container" onclick="placeBet('4')" >4</button>     
+            <button class="betButton" id="black1"  onclick="placeBet('7')"> <div class="coin-container"></div>7</button>
+
+    
+            <button id="red" >10</button>     
+            <button class="betButton" id="black" onclick="placeBet('black')" >13</button>
+     
+            <button id="red" >16</button>     
+            <button class="betButton" id="black" onclick="placeBet('black')" >19</button>
+     
+            <button id="red" >22</button>     
+            <button class="betButton" id="black" onclick="placeBet('black')" >15</button>
+     
+            <button id="red" >28</button>     
+            <button class="betButton" id="black" onclick="placeBet('black')" >31</button>
+    
+            <button id="red" >33</button>     
+        </div>
+        <div class ="rij2">
+            <button id="red" >2</button>
+            <button id="black" >5</button>     
+            <button id="red" >8</button>     
+            <button id="black" >11</button>     
+            <button id="red" >14</button>     
+            <button id="black" >17</button>     
+            <button id="red" >20</button>     
+            <button id="black" >23</button>     
+            <button id="red" >26</button>     
+            <button id="black" >29</button>     
+            <button id="red" >32</button>     
+            <button id="black" >35</button>     
+        </div>
+        <div class ="rij2">
+            <button id="black" >3</button>
+            <button id="red" >6</button>     
+            <button id="black" >9</button>     
+            <button id="red" >12</button>     
+            <button id="black" >15</button>     
+            <button id="red" >18</button>     
+            <button id="black" >21</button>     
+            <button id="red" >24</button>     
+            <button id="black" >27</button>     
+            <button id="red" >30</button>     
+            <button id="black" >33</button>     
+            <button id="red" >36</button>     
+        </div>
+        
+    </div>
+    <script src="/scripts/script.js"></script>
+</body>
+</html>
