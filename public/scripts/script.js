@@ -244,7 +244,7 @@ function resetBet() {
 
 document.getElementById('spinButton').addEventListener('click', function() {
     if (isSpinning) return;
-    resetBet();
+    
     fetch('/spin', {
         method: 'POST',
     })
