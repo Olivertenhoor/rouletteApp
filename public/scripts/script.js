@@ -197,7 +197,10 @@ function showResult(result) {
     const resultSegment = Math.floor((2 * Math.PI - finalAngle) / segmentAngle);
     const resultNumber = wheelNumbers[resultSegment % segments];
 
-    const isRed = (resultNumber % 2 === 0);
+    const isRed = (resultNumber === 1 || resultNumber === 14 || resultNumber === 9 || resultNumber === 18 || resultNumber === 7 || resultNumber === 12 || resultNumber === 3
+        || resultNumber === 32 || resultNumber === 19 || resultNumber === 21 || resultNumber === 25 || resultNumber === 34 || resultNumber === 27 || resultNumber === 36
+        || resultNumber === 30 || resultNumber === 23 || resultNumber === 5 || resultNumber === 16
+     );
     const isBlack = !isRed;
 
     let winAmount = 0;
@@ -244,6 +247,8 @@ function resetBet() {
 
 document.getElementById('spinButton').addEventListener('click', function() {
     if (isSpinning) return;
+    // const result = data.result;
+    spinWheel(result);
     
     fetch('/spin', {
         method: 'POST',
