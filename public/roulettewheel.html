@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Wheel</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    
+</head>
+<body>
+    <div>
+        <p id="walletBalance">Wallet Balance: 100</p>
+        <p id="betAmount">Current Bet: 0</p>
+        <p id="winAmount">Win: 0</p>
+
+    </div>
+</body>
+<body>
+    <div class="container">
+        <canvas id="rouletteCanvas" width="800" height="600"></canvas>
+        <button id="spinButton">Spin</button>
+        <button id="resetButton" onclick="resetBet()">Reset Bet</button>
+        <button class="betButton" class="coin-container" id="betRedButton" onclick="placeBet('red')">Bet on Red</button>
+        <button id="betBlackButton" onclick="placeBet('black')">Bet on Black</button>
+        
+        <div id="result"></div>
+    </div>
+    <div class = "specialBets">
+       <div id="coin"></div> 
+       <div class ="rij1">
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('1')" > 1</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('4')" >4</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('7')" >7</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('10')" >10</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('13')" >13</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('16')" >16</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('19')" >19</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('22')" >22</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('25')" >25</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('28')" >28</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('31')" >31</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('33')" >33</button>     
+  
+        </div>
+        <div class ="rij2">
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('2')" >2</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('5')" > 5</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('8')" >8</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('11')" > 11</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('14')" >14</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('17')" > 17</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('20')" >20</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('23')" > 23</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('26')" >26</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('29')" > 29</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('32')" >32</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('35')" > 35</button>
+
+        </div>
+        <div class ="rij2">
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('3')" > 3</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('6')" >6</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('9')" > 9</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('12')" >12</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('15')" > 15</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('18')" >18</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('21')" > 21</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('24')" >24</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('27')" > 27</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('30')" >30</button>     
+            <button class="betButton" id="red" class="coin-container" onclick="placeSpecificBet('33')" > 33</button>
+            <button class="betButton" id="black" class="coin-container" onclick="placeSpecificBet('36')" >36</button>        
+        </div>
+        
+    </div>
+    <script src="/scripts/rouletteWheel.js"></script>
+</body>
+</html>
