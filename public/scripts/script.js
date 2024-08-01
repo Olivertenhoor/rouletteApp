@@ -7,7 +7,8 @@ const outerRadius = 250;
 const innerRadius = 200; // Radius for the white center
 const segments = 36;
 const segmentAngle = (2 * Math.PI) / segments;
-const wheelNumbers = [15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26,32]
+const wheelNumbers = [15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26,32];
+const betAmount = 10;
 let isSpinning = false;
 let currentAngle = 0;
 let spinSpeed = 0;
@@ -15,6 +16,10 @@ let playerWallet = 100; //initial amount
 let playerBet = 0; //initial player bet
 let playerBetOn = ''; 
 let currentBets = new Set();
+let betArray = new Array(36).fill(0);
+let betRed = 0;
+let betBlack = 0;
+
 
 
 const centerImage = new Image();
@@ -103,20 +108,42 @@ function spinWheel(result) {
 }
 
 function placeBet(color) {
-    // Assume a fixed bet amount for now, say 10 units
-    const betAmount = 10;
-    
+        
     // Check if player has enough money to place the bet
     if (playerWallet >= betAmount) {
         playerWallet -= betAmount;
-        playerBet += betAmount;
-        playerBetOn = color;
+        if(color === 'red') {
+            betRed += betAmount;
+            playerBet += betAmount
+        }
+        else { 
+            betBlack += betAmount;
+            playerBet += betAmount;
+        }
 
+        // playerBet += betAmount;
+        // playerBetOn = color;
+        
         // Display current wallet balance and bet amount
         updateWalletDisplay();
+        toggleBet();
 
 
     } else {
+        alert("Not enough money in your wallet to place this bet.");
+    }
+}
+
+function placeSpecificBet(number) {
+    if(playerWallet >= betAmount) {
+        playerWallet -= betAmount;
+        betArray[number - 1] += betAmount;
+        playerBet += betAmount;
+
+        updateWalletDisplay();
+        toggleBet();
+    }
+    else {
         alert("Not enough money in your wallet to place this bet.");
     }
 }
@@ -129,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeners for each betting button
     betButtons.forEach(button => {
         button.addEventListener('click', function() {
-            placeCoin(button);
+            toggleBet(button);
         });
     });
 
@@ -163,6 +190,21 @@ function toggleBet(button){
 //     }
 // }
 
+function placeCoin(button) {
+    const buttonId = button.id;
+    if (!currentBets[buttonId]) {
+        currentBets[buttonId] = 0;
+    }
+    currentBets[buttonId]++;
+
+    const coinContainer = button.querySelector('.coin-container');
+    const coinImg = document.createElement('div');
+    coinImg.classList.add('coin');
+    coinImg.style.left = `${Math.random() * 50}px`; // Randomize position slightly for visibility
+    coinImg.style.top = `${Math.random() * 50}px`; // Randomize position slightly for visibility
+
+    coinContainer.appendChild(coinImg);
+}
 
 // // Function to place the coin on the selected button
 function placeCoin(button) {
@@ -173,7 +215,7 @@ function placeCoin(button) {
     coin.style.top = `${rect.top + window.scrollY}px`;
     coin.style.width = '10px';
     coin.style.height = '10px';
-    coin.style.backgroundImage = 'url(/static/images/munt_immage.png)';
+    coin.style.backgroundImage = 'url(../images/munt_immage.png)';
     coin.style.backgroundSize = 'cover';
     coin.style.display = 'block';
     coin.style.pointerEvents = 'none';
@@ -204,21 +246,21 @@ function showResult(result) {
     const isBlack = !isRed;
 
     let winAmount = 0;
-    if(isNaN(playerBetOn)) {
-        if ((isRed && playerBetOn === 'red') || (isBlack && playerBetOn === 'black')) {     //calculate wether or not win
-            winAmount = playerBet * 2;
-            playerWallet += winAmount;
-        }
+
+    if (isRed) {     //calculate wether or not win
+        winAmount = betRed * 2;
     }
     else {
-        playerNumber = Number(playerBetOn);
-        if(playerNumber === resultNumber) {
-            winAmount = playerBet * 36;
-            playerWallet += winAmount;
-        }
+        winAmount = betBlack * 2;
     }
+    winAmount += (betArray[resultNumber - 1] * 36);
+    playerWallet += winAmount;
+   
+    betRed = 0;
+    betBlack = 0;
     playerBet = 0;
     playerBetOn = '';
+    betArray.fill(0);
 
     // Display the result
     document.getElementById('result').innerText = `The ball landed on ${resultNumber}`;
