@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5f5959;
+    height: 50px;
+    padding: 10px 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-logo a {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navbar-buttons {
+    padding-right: 50px;
+}
+
+.navbar-buttons .navbut {
+    background: transparent;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 50px;
+
+}
+
+.nav-left {
+    width: 200px; /* Sets the width of the sidebar */
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Fixed positioning */
+    top: 50px; /* Aligns the top of the sidebar with the top of the viewport */
+    left: 0; /* Aligns the left side of the sidebar with the left edge of the viewport */
+    padding: 20px; /* Adds padding inside the sidebar */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+
+}
+
+.navbar-buttons-left {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.navbutleft {
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+
+
+}
