@@ -9,7 +9,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #5f5959;
-    height: 50px;
+    height: 40px;
     padding: 10px 20px;
     color: white;
     position: fixed;
@@ -18,50 +18,94 @@ body {
     z-index: 1000;
 }
 
-.navbar-logo a {
+.navbar-buttons-left a {
     color: rgb(255, 0, 0);
     text-decoration: none;
-    font-size: 30px;
+    font-size:xx-large;
     font-weight: bold;
 }
+
+.navbar-buttons-left .navbutleft {
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    padding-left: 20px;
+    font-size: large;
+
+}
+
+.navbar-buttons-right {
+    padding-right: 100px;
+}
+
+
+
 
 .navbar-buttons {
     padding-right: 50px;
 }
 
-.navbar-buttons .navbut {
+
+
+
+.navbar-buttons .navbutright {
+    color: white;
     background: transparent;
+    cursor: pointer;
     border: none;
+    font-size: medium;
+
+}
+
+
+.navbar-buttons .navbutSignIn {
     color: white;
     text-decoration: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: large;
     font-weight: bold;
     padding-left: 50px;
 
 }
 
-.nav-left {
-    width: 200px; /* Sets the width of the sidebar */
-    background-color: #333; /* Background color */
-    color: #fff; /* Text color */
-    height: 100vh; /* Full viewport height */
-    position: fixed; /* Fixed positioning */
-    top: 50px; /* Aligns the top of the sidebar with the top of the viewport */
-    left: 0; /* Aligns the left side of the sidebar with the left edge of the viewport */
-    padding: 20px; /* Adds padding inside the sidebar */
-    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+.navbar-buttons .navbutSignUp {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    padding-left: 50px;
 
 }
 
-.navbar-buttons-left {
+ 
+
+
+
+
+/* Dit is voor een navbar aan de rechter kant */
+/* .nav-left {
+    width: 200px; 
+    background-color: #333; 
+    color: #fff; 
+    height: 100vh; 
+    position: fixed; 
+    top: 50px; 
+    left: 0; 
+    padding: 20px; 
+    box-sizing: border-box; 
+
+}  */
+
+/* .navbar-buttons-left {
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
+} */
 
-.navbutleft {
+/* .navbutleft {
     font-size: 20px;
     background: transparent;
     border: none;
@@ -70,4 +114,4 @@ body {
     cursor: pointer;
 
 
-}
+} */
