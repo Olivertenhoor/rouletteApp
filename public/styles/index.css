@@ -124,12 +124,14 @@ body {
     grid-template-columns: repeat(2,500px);
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 140px;
+    row-gap: 50px;
+    padding-bottom: 100px;
     
 }
 
 .rowPlacement {
-    width: 500px;
+    width: 600px;
     height: 400px;
     background-size: cover;
     background-position: center;
@@ -142,7 +144,7 @@ body {
     padding-left: 30px;
     padding-top: 300px;
     border-radius: 15px;
-
+    
 }
 
 .rowPlacement:hover {
@@ -157,6 +159,14 @@ body {
     background-image: url('/images/testImage.jpg');
 }
 
+#contact {
+    background-image: url('/images/contactFoto.jpg');
+}
+
+#roulette {
+    background-image: url('/images/sanderImage.jpg');
+}
+
 .contentImage {
     width: 500px;
     height: 350px;
@@ -169,7 +179,6 @@ body {
     text-align: center;
     background-color: gray;
 }
-
 
 
 
