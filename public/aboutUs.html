@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles/aboutUs.css">
+    </head>
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="largeFoto"></div>
+    <div class="generalTextHolder">
+        <div class="generalText">
+            Ons team bestaat uit 3 enthousiaste gasten die allemaal een hart hebben voor ondernemen. 
+            Wij kennen elkaar vanuit onze studententijd en hebben daar ook dit idee bedacht om samen uit te werken.
+            Door onze verschillende achtergronden en studies zijn wij het perfecte team en kunnen we alle nodige problemen met elkaar tackelen.
+
+        </div>
+        
+    </div>
+    <div class="hetTeam">
+        Ons Team
+    </div>
+
+    <div class="rowContent">
+        <div class="rowPlacement">
+            <h1>Sjoerd de Jong</h1>
+            Onze marketing genie Sjoerd is met veel enthousiastme en ervaring hoofd van het marketing team.
+        </div>
+        <div class="rowPlacement" id="fotoSjoerd"></div>
+        <div class="rowPlacement" id="fotoWillem"></div>
+        <div class="rowPlacement">
+            <h1>Willem Portengen</h1>
+            Als hoofd legal team heeft Willem de taak om te zorgen dat alles netjes en volgens de regels verloopt.
+            Met zijn kennis en ervaring is hij de man om het legal team van 'website naam' aan te sturen.
+        </div>
+        <div class="rowPlacement">
+            <h1>Oliver ten Hoor</h1>
+            De technische dingen worden uitgevoerd door de hoofd van it, Oliver. Met zijn achtergrond in theoretische informatica
+            kan hij zich goed manouvreren door alle uitdagingen die web development te bieden hebben.
+        </div>
+        <div class="rowPlacement" id="fotoOli"></div>
+    </div>
+
+
+
+    <div id="footer-container"></div>
+    
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                const scriptTags = document.querySelectorAll('#navbar-container script');
+                scriptTags.forEach(scriptTag => {
+                    const newScript = document.createElement('script');
+                    newScript.textContent = scriptTag.textContent;
+                    document.body.appendChild(newScript);
+                });
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+
+    </script>
+</body>

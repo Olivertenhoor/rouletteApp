@@ -1,0 +1,12 @@
+.footer {
+    background-color: #3d3d3d;
+    color: rgb(228, 17, 17);
+    text-align: center;
+    padding: 15px 0;
+    position: static;
+    bottom: 0;
+    width: 100%;
+   
+    justify-content: center;
+    align-items: center;
+}
