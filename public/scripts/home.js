@@ -15,7 +15,7 @@ fetch('footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-container').innerHTML = data;
-                const scriptTags = document.querySelectorAll('#navbar-container script');
+                const scriptTags = document.querySelectorAll('#footer-container script');
                 scriptTags.forEach(scriptTag => {
                     const newScript = document.createElement('script');
                     newScript.textContent = scriptTag.textContent;
