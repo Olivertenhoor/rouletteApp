@@ -23,5 +23,8 @@ fetch('footer.html')
                 });
             }   );
 
+document.getElementById('aboutUs').addEventListener('click', function() {
+    window.location.href = 'aboutUs.html'; // Redirect to a different page
+});
 
 
