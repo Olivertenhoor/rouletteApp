@@ -2,12 +2,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #D1B000;
+    color: white;
 }
 
 .rowContent {
     width: 100%;
     padding-top: 200px;
-    background-color: #D1B000;
     display: flex;
     display: grid;
     grid-template-columns: repeat(2,500px);
@@ -25,7 +26,6 @@ body {
     background-size: cover;
     background-position: center;
     border: none;
-    color: white;
     font-weight: bold;
     font-size: xx-large;
     cursor: pointer;
@@ -33,6 +33,7 @@ body {
     padding-left: 30px;
     padding-top: 300px;
     border-radius: 15px;
+    color: white;
     
 }
 
@@ -63,7 +64,6 @@ body {
 
 .text-overlay {
     position: absolute;
-    color: white;
     font-weight: bold;
     text-align: center;
     background-color: gray;
