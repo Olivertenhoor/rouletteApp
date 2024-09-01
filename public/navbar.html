@@ -11,6 +11,7 @@
 
     <div class="navbar-buttons">
         <button class="navbutright" id="veiligSpelen">Veilig Spelen</button>
+        <button class="navbutright" id="concept">Concept</button>
         <button class="navbutright" id="aboutUsTop">About Us</button>
         <button class="navbutright" id="contactTop">Contact</button>
         <button class="navbutSignIn" id="loginButton">Sign In</button>
@@ -24,6 +25,10 @@
 <script>
     document.getElementById('wiel').addEventListener('click', function() {
         window.location.href = '/RouletteWheel'; 
+    });
+
+    document.getElementById('concept').addEventListener('click', function() {
+        window.location.href = '/Concept'; 
     });
     
     document.getElementById('loginButton').addEventListener('click', function() {

@@ -1,10 +1,24 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D1B000;
+    color: white;
+}
+
+.roulette-wallet {
+    display: flex;
+    align-items:start;
+}
+
+.walletInfo {
+    padding-right: 800px;
+    padding-top: 100px;
 }
 
 .container {
     text-align: left;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .specialBets {
@@ -42,9 +56,7 @@ body {
 
 }
 
-#rouletteCanvas {
-    background-color: white;
-}
+
 
 #spinButton {
     font-size: 18px;

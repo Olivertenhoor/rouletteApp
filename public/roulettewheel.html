@@ -4,28 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roulette Wheel</title>
-    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="styles/rouletteWheel.css">
+
 
     
 </head>
 <body>
-    <div>
-        <p id="walletBalance">Wallet Balance: 100</p>
-        <p id="betAmount">Current Bet: 0</p>
-        <p id="winAmount">Win: 0</p>
 
-    </div>
-</body>
-<body>
-    <div class="container">
-        <canvas id="rouletteCanvas" width="800" height="600"></canvas>
-        <button id="spinButton">Spin</button>
-        <button id="resetButton" onclick="resetBet()">Reset Bet</button>
-        <button class="betButton" class="coin-container" id="betRedButton" onclick="placeBet('red')">Bet on Red</button>
-        <button id="betBlackButton" onclick="placeBet('black')">Bet on Black</button>
+    <div id="navbar-container"></div>
+
+
+    <div class="roulette-wallet">
         
-        <div id="result"></div>
+
+        <div class="container">
+            <canvas id="rouletteCanvas" width="800" height="600"></canvas>
+            <button id="spinButton">Spin</button>
+            <button id="resetButton" onclick="resetBet()">Reset Bet</button>
+            <button class="betButton" class="coin-container" id="betRedButton" onclick="placeBet('red')">Bet on Red</button>
+            <button id="betBlackButton" onclick="placeBet('black')">Bet on Black</button>
+            
+            <div id="result"></div>
+        </div>
+
+        <div class="walletInfo">
+            <p id="walletBalance">Wallet Balance: 100</p>
+            <p id="betAmount">Current Bet: 0</p>
+            <p id="winAmount">Win: 0</p>
+
+        </div>
     </div>
+
     <div class = "specialBets">
        <div id="coin"></div> 
        <div class ="rij1">
@@ -74,6 +83,30 @@
         </div>
         
     </div>
-    <script src="/scripts/rouletteWheel.js"></script>
+
+    <div id="footer-container"></div>
+    <script src="./scripts/rouletteWheel.js"></script>
+
+
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                const scriptTags = document.querySelectorAll('#navbar-container script');
+                scriptTags.forEach(scriptTag => {
+                    const newScript = document.createElement('script');
+                    newScript.textContent = scriptTag.textContent;
+                    document.body.appendChild(newScript);
+                });
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+    </script>
 </body>
 </html>

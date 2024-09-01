@@ -13,13 +13,67 @@
     <div id="navbar-container"></div>
 
     <div class="content-holder">
-        dit is ons concept
+        <div class="menu">
+            <button class="menu-btn" onclick="showContent('content1' , this)">Difference</button>
+            <button class="menu-btn" onclick="showContent('content2' , this)">Free-to-Play</button>
+            <button class="menu-btn" onclick="showContent('content3' , this)">Revenue Model</button>
+        </div>
+
+        <div class="content-container">
+            <div id="content1" class="content">
+                <p>Fair and Transparent Odds: Traditional roulette wheels have a built-in house advantage due to the green pockets. These green squares reduce your chances of winning when you bet on red or black. At [Your Website Name], we’ve removed those green pockets entirely, ensuring that your chances are truly 50-50 every time you play. If you bet on red, you either win or lose—no sneaky green to mess up your odds.
+
+                    Straightforward Gameplay: Our streamlined approach to roulette makes it easier than ever to enjoy the game. With only red and black squares, there's no need to worry about complicated betting strategies or calculating odds. It’s a perfect game for both beginners and seasoned players who crave a straightforward and fair gaming experience.
+                    
+                    Accessible Anywhere, Anytime: Whether you’re at home, at work, or on the go, our platform is available to you 24/7. All you need is an internet connection, and you can dive into the action. No downloads, no installations—just instant fun and excitement with our web-based game.</p>
+            </div>
+    
+            <div id="content2" class="content">
+                <p>One of the best things about playing at [Your Website Name] is that our roulette game is completely free to play. We believe in offering a fun and fair gaming experience without any hidden fees, memberships, or subscriptions. Unlike many other gaming sites, you won’t be bombarded with demands for in-app purchases or extra payments to unlock features.
+
+                    So how do we keep the lights on? Simple. We make money by selling ad space on our website. This allows us to provide a free gaming experience to you while earning revenue through advertising. Our ads are carefully selected to ensure they don’t interfere with your gameplay, allowing you to enjoy uninterrupted spins on the roulette wheel while we take care of the business side of things.</p>
+            </div>
+    
+            <div id="content3" class="content">
+                <p>Our roulette wheel is completely fair. We have revolutionized the casino game with our fair roulette wheel.
+                    We make 0 money on the gambling, that means you lose 0 dollars while gambling on our website. How do we make money you ask?
+                    Our sole revenue source is the ads we show on the website, therefor we also ask you to exclude our website from your addblocker.
+                </p>
+            </div>
+        </div>
     </div>
 
 
     <div id="footer-container"></div>
+    <script src="scripts/concept.js"></script>
 
     <script>
+        function showContent(contentId, clickedButton) {
+            // Hide all content sections
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+        
+            // Show the selected content section
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.classList.add('active');
+
+            // Remove active class from all buttons
+            var buttons = document.querySelectorAll('.menu-btn');
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            // Add active class to the clicked button
+            clickedButton.classList.add('active');
+        }
+        
+        // Show the first content section by default
+        document.addEventListener("DOMContentLoaded", function() {
+            showContent('content1', document.querySelector('.menu-btn'));
+        });
+
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
