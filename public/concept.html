@@ -1,6 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Concept</title>
+    <link rel="stylesheet" href="styles/concept.css">
+
+    
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+
+    <div class="content-holder">
+        dit is ons concept
+    </div>
 
 
-fetch('navbar.html')
+    <div id="footer-container"></div>
+
+    <script>
+        fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
@@ -12,19 +32,13 @@ fetch('navbar.html')
                 });
             });
 
-    
-fetch('footer.html')
+        fetch('footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-container').innerHTML = data;
-                const scriptTags = document.querySelectorAll('#footer-container script');
-                scriptTags.forEach(scriptTag => {
-                    const newScript = document.createElement('script');
-                    newScript.textContent = scriptTag.textContent;
-                    document.body.appendChild(newScript);
-                });
-            });
+            })
+    </script>
 
-
+</body>
 
 

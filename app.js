@@ -22,6 +22,22 @@ app.get('/RouletteWheel', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'roulettewheel.html'));
 });
 
+app.get('/AboutUs', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public' , 'aboutUs.html'))
+});
+
+app.get('/CreateAccount', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public' , 'createAccount.html'))
+});
+
+app.get('/Login', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public' , 'login.html'))
+});
+
+app.get('/Concept', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public' , 'concept.html'))
+});
+
 
 app.post('/submit', (req, res) => {
     const {username, password} = req.body;
