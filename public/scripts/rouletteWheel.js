@@ -23,7 +23,7 @@ let betBlack = 0;
 
 
 const centerImage = new Image();
-centerImage.src = '../images/reclame_middle.png';  //path to image
+centerImage.src = '../images/beemascot.webp';  //path to image
 
 // Function to draw the roulette wheel on canvas
 function drawWheel(angleOffset = 0) {
